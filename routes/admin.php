@@ -30,7 +30,9 @@ Route::prefix("admin")->namespace('Admin')->middleware(['auth:admin'])->group(fu
     Route::get('/treasuries', [TeasurieController::class, 'index'])->name('admin.treasuries');
     Route::get('/treasuries/create', [TeasurieController::class, 'create'])->name('admin.treasuries.create');
     Route::post('/treasuries/store', [TeasurieController::class, 'store'])->name('admin.treasuries.store');
-
+    Route::get('/treasuries/edit/{id}', [TeasurieController::class, 'edit'])->name('admin.treasuries.edit');
+    Route::post('/treasuries/update/{id}', [TeasurieController::class, 'update'])->name('admin.treasuries.update');
+    Route::post('/treasuries/ajax_search', [TeasurieController::class, 'ajax_search'])->name('admin.treasuries.ajax_search');
     /*-------------- End Treasuries   -------------------*/
 });
 Route::prefix("admin")->namespace('Admin')->middleware(['guest:admin'])->group(function () {

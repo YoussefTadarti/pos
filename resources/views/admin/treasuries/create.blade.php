@@ -29,8 +29,8 @@
                             <label>نوع الخزنة</label>
                             <select class="form-control" name="is_master" id="is_master">
                                 <option disabled selected value="">--ماهو نوع الخزنة؟--</option>
-                                <option value="1">رئيسية</option>
-                                <option value="0">فرعية</option>
+                                <option @if (old('is_master')) selected @endif value="1">رئيسية</option>
+                                <option @if (!old('is_master')) selected @endif value="0">فرعية</option>
                             </select>
                         </div>
                         @error('is_master')
@@ -60,8 +60,8 @@
                             <label>حالة الخزنة</label>
                             <select class="form-control" name="active" id="active">
                                 <option disabled selected value="">-- كيف هي حالة الخزنة؟--</option>
-                                <option  value="1">مفعلة</option>
-                                <option value="0">مغلقة</option>
+                                <option @if (old('active')) selected @endif value="1">مفعلة</option>
+                                <option @if (!old('active')) selected @endif value="0">مغلقة</option>
                             </select>
                         </div>
                         @error('active')
